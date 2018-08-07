@@ -4,6 +4,7 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.Scanner;
 
 import com.interview.tests.AutomationTest;
 
@@ -16,6 +17,7 @@ public class MainStart {
 		 * Load the words and their definitions from the text file.
 		 * and Print them out.
 		 */
+		System.out.println("Please enter path to input file: ");
 		BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 	    String pathInput = reader.readLine();
 		
@@ -42,9 +44,11 @@ public class MainStart {
 		 * 
 		 */
 		RandomNumber num = new RandomNumber();
-		int position; 
+		int position;
+		@SuppressWarnings("resource")
+		Scanner scan = new Scanner(System.in);
 		System.out.println("Please provide the nth number in a sorted 500 number array:" );
-		System.in.read(position);
+		position = scan.nextInt();
 		System.out.println("The "+ position + " slot of a 500 random number sorted array is: " + num.getNthNumber(position));
 	}
 
